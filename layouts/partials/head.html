@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="{{ . | truncate 70 }}" />
 {{- end }}
 {{- with ($.Scratch.Get "Description") }}
-  <meta name="description" content="{{ . }}">
+  <meta name="description" content="{{ delimit (split . "\n") " " }}">
   <meta property="og:description" content="{{ . }}">
   <meta name="twitter:description" content="{{ . | truncate 200 }}">
 {{- end }}
